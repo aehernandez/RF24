@@ -27,8 +27,8 @@
 // Hardware configuration: Set up nRF24L01 radio on SPI bus plus pins 7 & 8 
 RF24 radio(7,8);
 
-byte addresses[][6] = {"1Node","2Node"};
-
+//byte addresses[][6] = {"1Node","2Node"};
+const uint64_t addresses[2] = {0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL}; 
 
 // Set up roles to simplify testing 
 boolean role;                                    // The main role variable, holds the current role identifier

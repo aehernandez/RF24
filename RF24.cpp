@@ -10,6 +10,8 @@
 #include "RF24_config.h"
 #include "RF24.h"
 
+//TODO: Document this addition to patch over code to work with SPI library 
+#define STATUS 0x07
 /****************************************************************************/
 
 void RF24::csn(bool mode)
@@ -22,7 +24,7 @@ void RF24::csn(bool mode)
 	#if  ( !defined(RF24_TINY) && !defined (__arm__)  && !defined (SOFTSPI)) || defined (CORE_TEENSY)
  			_SPI.setBitOrder(MSBFIRST);
   			_SPI.setDataMode(SPI_MODE0);
-			_SPI.setClockDivider(SPI_CLOCK_DIV2);
+			_SPI.setClockDivider(SPI_CLOCK_DIV4);
 	#endif
 #endif
 
